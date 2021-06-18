@@ -1,7 +1,7 @@
-package com.uuhnaut69.example.infrastructure;
+package com.uuhnaut69.example.infrastructure.persistence;
 
-import com.uuhnaut69.example.domain.Customer;
-import com.uuhnaut69.example.domain.CustomerRepository;
+import com.uuhnaut69.example.domain.customer.entity.Customer;
+import com.uuhnaut69.example.domain.customer.ports.CustomerRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;

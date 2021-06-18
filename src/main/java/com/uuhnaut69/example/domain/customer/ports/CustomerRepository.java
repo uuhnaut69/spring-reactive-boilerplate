@@ -1,5 +1,6 @@
-package com.uuhnaut69.example.domain;
+package com.uuhnaut69.example.domain.customer.ports;
 
+import com.uuhnaut69.example.domain.customer.entity.Customer;
 import reactor.core.publisher.Mono;
 
 import java.util.UUID;

@@ -1,4 +1,4 @@
-package com.uuhnaut69.example.infrastructure;
+package com.uuhnaut69.example.infrastructure.persistence;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

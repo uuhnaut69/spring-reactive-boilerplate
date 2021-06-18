@@ -1,4 +1,4 @@
-package com.uuhnaut69.example.domain;
+package com.uuhnaut69.example.domain.customer.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

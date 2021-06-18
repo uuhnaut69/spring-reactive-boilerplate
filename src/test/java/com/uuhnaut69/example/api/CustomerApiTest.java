@@ -1,10 +1,10 @@
 package com.uuhnaut69.example.api;
 
-import com.uuhnaut69.example.domain.Customer;
-import com.uuhnaut69.example.domain.CustomerDTO;
-import com.uuhnaut69.example.domain.CustomerService;
-import com.uuhnaut69.example.domain.exception.CustomerNotFoundException;
-import com.uuhnaut69.example.domain.exception.UserNameAlreadyExistsException;
+import com.uuhnaut69.example.domain.customer.entity.Customer;
+import com.uuhnaut69.example.domain.customer.CustomerDTO;
+import com.uuhnaut69.example.domain.customer.ports.CustomerService;
+import com.uuhnaut69.example.domain.customer.exception.CustomerNotFoundException;
+import com.uuhnaut69.example.domain.customer.exception.UserNameAlreadyExistsException;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.reactive.WebFluxTest;

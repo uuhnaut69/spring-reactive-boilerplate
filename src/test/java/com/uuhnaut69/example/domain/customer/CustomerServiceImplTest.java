@@ -1,7 +1,10 @@
-package com.uuhnaut69.example.domain;
+package com.uuhnaut69.example.domain.customer;
 
-import com.uuhnaut69.example.domain.exception.CustomerNotFoundException;
-import com.uuhnaut69.example.domain.exception.UserNameAlreadyExistsException;
+import com.uuhnaut69.example.domain.customer.entity.CustomerServiceImpl;
+import com.uuhnaut69.example.domain.customer.exception.CustomerNotFoundException;
+import com.uuhnaut69.example.domain.customer.entity.Customer;
+import com.uuhnaut69.example.domain.customer.exception.UserNameAlreadyExistsException;
+import com.uuhnaut69.example.domain.customer.ports.CustomerRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;

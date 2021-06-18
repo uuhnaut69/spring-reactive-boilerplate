@@ -1,8 +1,8 @@
 package com.uuhnaut69.example.api;
 
-import com.uuhnaut69.example.domain.Customer;
-import com.uuhnaut69.example.domain.CustomerService;
-import com.uuhnaut69.example.domain.CustomerDTO;
+import com.uuhnaut69.example.domain.customer.entity.Customer;
+import com.uuhnaut69.example.domain.customer.ports.CustomerService;
+import com.uuhnaut69.example.domain.customer.CustomerDTO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;

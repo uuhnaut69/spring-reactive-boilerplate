@@ -1,7 +1,10 @@
-package com.uuhnaut69.example.domain;
+package com.uuhnaut69.example.domain.customer.entity;
 
-import com.uuhnaut69.example.domain.exception.CustomerNotFoundException;
-import com.uuhnaut69.example.domain.exception.UserNameAlreadyExistsException;
+import com.uuhnaut69.example.domain.customer.CustomerDTO;
+import com.uuhnaut69.example.domain.customer.exception.CustomerNotFoundException;
+import com.uuhnaut69.example.domain.customer.exception.UserNameAlreadyExistsException;
+import com.uuhnaut69.example.domain.customer.ports.CustomerRepository;
+import com.uuhnaut69.example.domain.customer.ports.CustomerService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

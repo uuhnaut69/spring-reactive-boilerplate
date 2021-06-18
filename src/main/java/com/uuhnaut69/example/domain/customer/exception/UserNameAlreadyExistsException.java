@@ -1,4 +1,4 @@
-package com.uuhnaut69.example.domain.exception;
+package com.uuhnaut69.example.domain.customer.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

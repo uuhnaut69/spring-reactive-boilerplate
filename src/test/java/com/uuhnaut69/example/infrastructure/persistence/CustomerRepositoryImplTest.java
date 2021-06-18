@@ -1,6 +1,6 @@
-package com.uuhnaut69.example.infrastructure;
+package com.uuhnaut69.example.infrastructure.persistence;
 
-import com.uuhnaut69.example.domain.Customer;
+import com.uuhnaut69.example.domain.customer.entity.Customer;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;

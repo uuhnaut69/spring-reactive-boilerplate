@@ -1,4 +1,4 @@
-# Spring Reactive Example
+# Spring Reactive Boilerplate
 ![CircleCI](https://img.shields.io/circleci/build/github/uuhnaut69/spring-reactive-boilerplate/master?logo=circleci&style=for-the-badge)
 ![Travis (.org) branch](https://img.shields.io/travis/uuhnaut69/spring-reactive-boilerplate/master?logo=travisci&style=for-the-badge)
 ![Codecov](https://img.shields.io/codecov/c/github/uuhnaut69/spring-reactive-boilerplate?logo=codecov&style=for-the-badge)

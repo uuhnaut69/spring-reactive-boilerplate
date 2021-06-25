@@ -122,6 +122,13 @@
                         </goals>
                     </execution>
                 </executions>
+                <configuration>
+                    <excludes>
+                        <exclude>**/entity/*</exclude>
+                        <exclude>**/exception/*</exclude>
+                        <exclude>**/*DTO.class</exclude>
+                    </excludes>
+                </configuration>
             </plugin>
         </plugins>
     </build>

@@ -10,4 +10,8 @@ class ReactiveApplicationTests {
     void contextLoads() {
     }
 
+    @Test
+    void main() {
+        ReactiveApplication.main(new String[] {});
+    }
 }

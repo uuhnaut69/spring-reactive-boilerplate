@@ -127,6 +127,7 @@
                         <exclude>**/entity/*</exclude>
                         <exclude>**/exception/*</exclude>
                         <exclude>**/*DTO.class</exclude>
+                        <exclude>**/*Entity.class</exclude>
                     </excludes>
                 </configuration>
             </plugin>

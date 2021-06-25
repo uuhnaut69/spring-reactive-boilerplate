@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.uuhnaut69</groupId>
-    <artifactId>spring-boot-reactive-example</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <name>spring-boot-reactive-example</name>
-    <description>Demo project for Spring Boot</description>
+    <artifactId>spring-boot-reactive-boilerplate</artifactId>
+    <version>0.0.1</version>
+    <name>spring boot reactive boilerplate</name>
+    <description>Spring Boot Reactive Boilerplate</description>
     <properties>
         <java.version>11</java.version>
         <repackage.classifier/>

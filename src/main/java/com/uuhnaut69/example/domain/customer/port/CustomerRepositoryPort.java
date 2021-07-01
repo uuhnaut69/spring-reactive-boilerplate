@@ -1,11 +1,11 @@
-package com.uuhnaut69.example.domain.customer.ports;
+package com.uuhnaut69.example.domain.customer.port;
 
 import com.uuhnaut69.example.domain.customer.entity.Customer;
 import reactor.core.publisher.Mono;
 
 import java.util.UUID;
 
-public interface CustomerRepository {
+public interface CustomerRepositoryPort {
 
   Mono<Customer> findById(final UUID customerId);
 

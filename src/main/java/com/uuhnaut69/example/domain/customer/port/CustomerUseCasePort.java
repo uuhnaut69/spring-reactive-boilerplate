@@ -1,4 +1,4 @@
-package com.uuhnaut69.example.domain.customer.ports;
+package com.uuhnaut69.example.domain.customer.port;
 
 import com.uuhnaut69.example.domain.customer.CustomerDTO;
 import com.uuhnaut69.example.domain.customer.entity.Customer;
@@ -6,7 +6,7 @@ import reactor.core.publisher.Mono;
 
 import java.util.UUID;
 
-public interface CustomerService {
+public interface CustomerUseCasePort {
 
   Mono<Customer> createCustomer(final CustomerDTO customerDTO);
 

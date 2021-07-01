@@ -1,10 +1,10 @@
-package com.uuhnaut69.example.domain.customer.entity;
+package com.uuhnaut69.example.domain.customer;
 
-import com.uuhnaut69.example.domain.customer.CustomerDTO;
+import com.uuhnaut69.example.domain.customer.entity.Customer;
 import com.uuhnaut69.example.domain.customer.exception.CustomerNotFoundException;
 import com.uuhnaut69.example.domain.customer.exception.UserNameAlreadyExistsException;
-import com.uuhnaut69.example.domain.customer.ports.CustomerRepository;
-import com.uuhnaut69.example.domain.customer.ports.CustomerService;
+import com.uuhnaut69.example.domain.customer.port.CustomerRepositoryPort;
+import com.uuhnaut69.example.domain.customer.port.CustomerUseCasePort;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -15,13 +15,13 @@ import java.util.UUID;
 @Service
 @Transactional
 @RequiredArgsConstructor
-public class CustomerServiceImpl implements CustomerService {
+public class CustomerUseCase implements CustomerUseCasePort {
 
-  private final CustomerRepository customerRepository;
+  private final CustomerRepositoryPort customerRepositoryPort;
 
   @Override
   public Mono<Customer> createCustomer(final CustomerDTO customerDTO) {
-    return customerRepository
+    return customerRepositoryPort
         .existsByUsername(customerDTO.getUsername())
         .flatMap(
             exists -> {
@@ -31,22 +31,22 @@ public class CustomerServiceImpl implements CustomerService {
               var customer = new Customer();
               customer.setId(UUID.randomUUID());
               toCustomer(customer, customerDTO);
-              return customerRepository.save(customer);
+              return customerRepositoryPort.save(customer);
             });
   }
 
   @Override
   public Mono<Customer> updateCustomer(final UUID customerId, final CustomerDTO customerDTO) {
-    return customerRepository
+    return customerRepositoryPort
         .findById(customerId)
         .switchIfEmpty(Mono.error(new CustomerNotFoundException(customerId)))
         .map(customer -> toCustomer(customer, customerDTO))
-        .flatMap(customerRepository::save);
+        .flatMap(customerRepositoryPort::save);
   }
 
   @Override
   public Mono<Void> deleteCustomerById(final UUID customerId) {
-    return customerRepository.deleteById(customerId);
+    return customerRepositoryPort.deleteById(customerId);
   }
 
   private Customer toCustomer(Customer customer, CustomerDTO customerDTO) {

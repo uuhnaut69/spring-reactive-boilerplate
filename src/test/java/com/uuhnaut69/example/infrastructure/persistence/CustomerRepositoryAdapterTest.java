@@ -15,11 +15,11 @@ import java.util.UUID;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
-class CustomerRepositoryImplTest {
+class CustomerRepositoryAdapterTest {
 
   @Mock private CustomerR2dbcRepository customerR2dbcRepository;
 
-  @InjectMocks private CustomerRepositoryImpl customerRepository;
+  @InjectMocks private CustomerRepositoryAdapter customerRepository;
 
   @Test
   void findById() {

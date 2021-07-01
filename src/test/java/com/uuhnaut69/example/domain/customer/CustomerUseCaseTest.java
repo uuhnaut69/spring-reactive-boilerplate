@@ -1,10 +1,9 @@
 package com.uuhnaut69.example.domain.customer;
 
-import com.uuhnaut69.example.domain.customer.entity.CustomerServiceImpl;
 import com.uuhnaut69.example.domain.customer.exception.CustomerNotFoundException;
 import com.uuhnaut69.example.domain.customer.entity.Customer;
 import com.uuhnaut69.example.domain.customer.exception.UserNameAlreadyExistsException;
-import com.uuhnaut69.example.domain.customer.ports.CustomerRepository;
+import com.uuhnaut69.example.domain.customer.port.CustomerRepositoryPort;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -20,17 +19,17 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
-class CustomerServiceImplTest {
+class CustomerUseCaseTest {
 
-  @Mock private CustomerRepository customerRepository;
+  @Mock private CustomerRepositoryPort customerRepositoryPort;
 
-  @InjectMocks private CustomerServiceImpl customerService;
+  @InjectMocks private CustomerUseCase customerService;
 
   @Test
   void createCustomerSuccessfully() {
-    when(customerRepository.existsByUsername(any(String.class)))
+    when(customerRepositoryPort.existsByUsername(any(String.class)))
         .thenReturn(Mono.just(Boolean.FALSE));
-    when(customerRepository.save(any(Customer.class)))
+    when(customerRepositoryPort.save(any(Customer.class)))
         .thenReturn(
             Mono.just(new Customer(UUID.randomUUID(), "uuhnaut69", "FirstName", "LastName")));
 
@@ -43,7 +42,7 @@ class CustomerServiceImplTest {
 
   @Test
   void createCustomerFailed() {
-    when(customerRepository.existsByUsername(any(String.class)))
+    when(customerRepositoryPort.existsByUsername(any(String.class)))
         .thenReturn(Mono.just(Boolean.TRUE));
 
     StepVerifier.create(
@@ -55,9 +54,9 @@ class CustomerServiceImplTest {
   @Test
   void updateCustomerSuccessfully() {
     var customerId = UUID.randomUUID();
-    when(customerRepository.findById(any(UUID.class)))
+    when(customerRepositoryPort.findById(any(UUID.class)))
         .thenReturn(Mono.just(new Customer(customerId, "uuhnaut69", "FirstName", "LastName")));
-    when(customerRepository.save(any(Customer.class)))
+    when(customerRepositoryPort.save(any(Customer.class)))
         .thenReturn(Mono.just(new Customer(customerId, "uuhnaut696", "FirstName", "LastName")));
 
     StepVerifier.create(
@@ -71,7 +70,7 @@ class CustomerServiceImplTest {
   @Test
   void updateCustomerFailed() {
     var customerId = UUID.randomUUID();
-    when(customerRepository.findById(customerId))
+    when(customerRepositoryPort.findById(customerId))
         .thenReturn(Mono.error(new CustomerNotFoundException(customerId)));
 
     StepVerifier.create(customerService.updateCustomer(customerId, any(CustomerDTO.class)))
@@ -81,7 +80,7 @@ class CustomerServiceImplTest {
 
   @Test
   void deleteCustomerByIdSuccessfully() {
-    when(customerRepository.deleteById(any(UUID.class))).thenReturn(Mono.empty());
+    when(customerRepositoryPort.deleteById(any(UUID.class))).thenReturn(Mono.empty());
     StepVerifier.create(customerService.deleteCustomerById(UUID.randomUUID())).verifyComplete();
   }
 }

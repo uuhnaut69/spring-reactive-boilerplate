@@ -1,7 +1,7 @@
 package com.uuhnaut69.example.infrastructure.persistence;
 
 import com.uuhnaut69.example.domain.customer.entity.Customer;
-import com.uuhnaut69.example.domain.customer.ports.CustomerRepository;
+import com.uuhnaut69.example.domain.customer.port.CustomerRepositoryPort;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -12,7 +12,7 @@ import java.util.UUID;
 @Repository
 @Transactional
 @RequiredArgsConstructor
-public class CustomerRepositoryImpl implements CustomerRepository {
+public class CustomerRepositoryAdapter implements CustomerRepositoryPort {
 
   private final CustomerR2dbcRepository customerR2dbcRepository;
 

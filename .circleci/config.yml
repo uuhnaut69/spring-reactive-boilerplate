@@ -19,9 +19,9 @@ jobs:
           name: Build
           command: mvn -B -DskipTests clean package
       # Then run your tests!
-      - run:
-          name: Test
-          command: mvn test
+#       - run:
+#           name: Test
+#           command: mvn test
 
 workflows:
   # Below is the definition of your workflow.

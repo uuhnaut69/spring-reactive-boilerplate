@@ -15,7 +15,7 @@
     <description>Spring Boot Reactive Boilerplate</description>
 
     <properties>
-        <java.version>11</java.version>
+        <java.version>19</java.version>
         <repackage.classifier/>
         <spring-native.version>0.12.1</spring-native.version>
     </properties>

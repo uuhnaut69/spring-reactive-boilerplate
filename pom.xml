@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.7.5</version>
+        <version>3.0.4</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.uuhnaut69</groupId>
@@ -15,7 +15,7 @@
     <description>Spring Boot Reactive Boilerplate</description>
 
     <properties>
-        <java.version>11</java.version>
+        <java.version>19</java.version>
         <repackage.classifier/>
         <spring-native.version>0.12.2</spring-native.version>
     </properties>
